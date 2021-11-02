@@ -9,6 +9,7 @@ resource "aws_db_instance" "kang_mydb" {
   username                = var.dbusername
   password                = var.dbpasswd
   parameter_group_name    = var.parameter_group_name
+  availability_zone       = "${var.region}${var.avazone[0]}"
   db_subnet_group_name    = aws_db_subnet_group.kang_dbsn.id
   vpc_security_group_ids  = [aws_security_group.kang_websg.id]
   skip_final_snapshot     = true
