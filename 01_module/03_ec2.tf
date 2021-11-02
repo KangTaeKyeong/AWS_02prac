@@ -95,7 +95,7 @@ resource "aws_instance" "kang_weba" {
   user_data              = file("./${var.sh}") 
 
   tags = {
-    Name = "${var.name}-weba"
+    Name = "${var.name}-web"
   }
 }
 resource "aws_eip" "kang_web_eip" {
